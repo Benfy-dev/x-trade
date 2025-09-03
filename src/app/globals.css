@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand: #00d094;
+
+  --font-hanken: var(--font-hanken-grotesk), sans-serif;
+  --font-inria: var(--font-inria-serif), serif;
+  --font-kiwi: var(--font-kiwi-maru), serif;
+}
+
+body {
+  font-family: var(--font-hanken-grotesk), sans-serif;
+}
+
+/* .font-inria {
+  font-family: var(--font-inria-serif), serif;
+}
+
+.font-hanken {
+  font-family: (--font-hanken-grotesk), sans-serif;
+} */
