@@ -1,0 +1,94 @@
+"use client";
+import React, { useEffect, useRef } from "react";
+import { FreeMode } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+const Testimonials = () => {
+  const videoRef = useRef(null);
+
+  function handleMouseEnter(e) {
+    e.currentTarget.controls = true;
+  }
+
+  function handleMouseLeave(e) {
+    e.currentTarget.controls = false;
+  }
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      const video =
+        document.fullscreenElement || document.webkitFullscreenElement;
+
+      if (video && video.tagName === "VIDEO") {
+        video.classList.remove("object-cover");
+        video.classList.add("object-contain");
+      } else {
+        document.querySelectorAll("video").forEach((vid) => {
+          vid.classList.remove("object-contain");
+          vid.classList.add("object-cover");
+        });
+      }
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+      document.removeEventListener(
+        "webkitfullscreenchange",
+        handleFullscreenChange
+      );
+    };
+  }, []);
+
+  return (
+    <div className="container mx-auto">
+      <div className="p-4 lg:p-10">
+        <h2 className="font-inria tracking-tight relative w-fit text-2xl font-bold mb-12">
+          Our Customer Testimonials
+        </h2>
+        <div>
+          <Swiper
+            spaceBetween={30}
+            freeMode={true}
+            modules={[FreeMode]}
+            breakpoints={{
+              320: { slidesPerView: 1.2, spaceBetween: 15 },
+              640: { slidesPerView: 1.8, spaceBetween: 20 },
+              768: { slidesPerView: 2.5, spaceBetween: 25 },
+              1024: { slidesPerView: 3.5, spaceBetween: 30 },
+            }}
+            className="mySwiper h-full !pr-4"
+          >
+            {[1, 2].map((index) => (
+              <SwiperSlide key={index} className="h-full">
+                <div className="">
+                  <div className="size-[320px] rounded-lg overflow-hidden hover:scale-[1.05] transition-all duration-500 ease-in-out">
+                    <video
+                      ref={videoRef}
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                      muted
+                      playsInline
+                      loop
+                      preload="metadata"
+                      className="rounded-lg cursor-pointer object-cover transition-all object-center h-full w-full"
+                    >
+                      <source
+                        src={`/videos/home/testimonials/testimonial-0${index}.mp4`}
+                        type="video/mp4"
+                      />
+                    </video>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Testimonials;

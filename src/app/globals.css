@@ -19,3 +19,10 @@ body {
 .font-hanken {
   font-family: (--font-hanken-grotesk), sans-serif;
 } */
+
+/* check swiper */
+.checker .swiper-wrapper {
+  flex-direction: column !important;
+}
+
+/* check swiper */

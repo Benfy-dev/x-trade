@@ -1,12 +1,11 @@
-import {
-  Geist,
-  Geist_Mono,
-  Hanken_Grotesk,
-  Inria_Serif,
-  Kiwi_Maru,
-} from "next/font/google";
+import { Hanken_Grotesk, Inria_Serif, Kiwi_Maru } from "next/font/google";
 import "./globals.css";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+
 import Navbar from "@/components/navbar/page";
+import Footer from "@/components/footer/page";
 
 const InriaSerif = Inria_Serif({
   weight: ["300", "400", "700"],
@@ -38,6 +37,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
