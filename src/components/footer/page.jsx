@@ -9,11 +9,25 @@ const Footer = () => {
     setCurrentYear(new Date().getFullYear());
   }, []);
   return (
-    <div className="mt-16 bg-[#00140f] text-white">
+    <div className="mt-16 bg-[#00140f] text-white relative overflow-clip">
+      <div
+        aria-hidden="true"
+        className="hidden md:block pointer-events-none opacity-10 absolute -left-[200px] md:-left-16 top-20 md:top-20 bottom-20 md:bottom-0 w-[320px] h-[100%] md:w-[380px] md:h-[90%] rotate-6 md:rotate-12 "
+        style={{
+          borderTopLeftRadius: "30px",
+          borderTopRightRadius: "30px",
+          background:
+            "linear-gradient(150.39deg, rgba(237, 242, 248, 0.22) 15.02%, #EDF2F8 99.59%)",
+          outline: "1px solid white",
+          outlineOffset: "40px",
+        }}
+      >
+        s
+      </div>
       <div className="container mx-auto">
         <div className="p-4 lg:p-10">
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-6">
-            <div className="shrink-0 lg:w-[40%]">
+          <div className="flex flex-col md:flex-row gap-10 lg:gap-6">
+            <div className="lg:shrink-0 md:w-[40%]">
               <Image
                 src="/images/xtrade-logo-dark.png"
                 alt="Xtrade Logo"
@@ -29,7 +43,7 @@ const Footer = () => {
                 success now!
               </p>
             </div>
-            <div className="shrink-0 lg:w-[15%]">
+            <div className="lg:shrink-0 md:w-[15%]">
               <h3 className="text-lg font-bold">Quick links</h3>
               <ul className="mt-4 space-y-2 text-white/70">
                 <li>
@@ -46,7 +60,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="shrink-0 lg:w-[15%]">
+            <div className="lg:shrink-0 md:w-[15%]">
               <h3 className="text-lg font-bold">Support</h3>
               <ul className="mt-4 space-y-2 text-white/70">
                 <li>
@@ -60,7 +74,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="shrink-0 lg:w-[25%]">
+            <div className="lg:shrink-0 md:w-[25%]">
               <h3 className="text-lg font-bold">Our Office</h3>
               <address className="mt-4 not-italic text-white/70 leading-6">
                 22 Gilbert Street, London, England, W1K 5EJ

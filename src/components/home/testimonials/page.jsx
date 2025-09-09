@@ -1,4 +1,5 @@
 "use client";
+import { slideUpByClass } from "@/utils/slideUpAnimation";
 import React, { useEffect, useRef } from "react";
 import { FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,6 +16,8 @@ const Testimonials = () => {
   }
 
   useEffect(() => {
+    slideUpByClass("slide-up-init");
+
     const handleFullscreenChange = () => {
       const video =
         document.fullscreenElement || document.webkitFullscreenElement;
@@ -45,7 +48,7 @@ const Testimonials = () => {
   return (
     <div className="container mx-auto">
       <div className="p-4 lg:p-10">
-        <h2 className="font-inria tracking-tight relative w-fit text-2xl font-bold mb-12">
+        <h2 className="font-inria slide-up-init tracking-tight relative w-fit text-2xl font-bold mb-12">
           Our Customer Testimonials
         </h2>
         <div>
@@ -62,7 +65,7 @@ const Testimonials = () => {
             className="mySwiper h-full !pr-4"
           >
             {[1, 2].map((index) => (
-              <SwiperSlide key={index} className="h-full">
+              <SwiperSlide key={index} className="h-full slide-up-init">
                 <div className="">
                   <div className="size-[320px] rounded-lg overflow-hidden hover:scale-[1.05] transition-all duration-500 ease-in-out">
                     <video

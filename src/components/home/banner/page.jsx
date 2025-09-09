@@ -1,6 +1,13 @@
+"use client";
+import { slideUpByClass } from "@/utils/slideUpAnimation";
 import Image from "next/image";
+import { useEffect } from "react";
 
 const Banner = () => {
+  useEffect(() => {
+    slideUpByClass("slide-up-init");
+  }, []);
+
   return (
     <>
       <div
@@ -13,7 +20,7 @@ const Banner = () => {
         }}
       >
         <div className="container mx-auto min-h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 h-full p-4 lg:p-10">
+          <div className="grid grid-cols-1 slide-up-init lg:grid-cols-2 xl:grid-cols-3 h-full p-4 lg:p-10">
             <div className="flex xl:col-span-2 items-center justify-center lg:justify-normal">
               <div>
                 <div className="font-inria xl:w-[544px] max-w-full mb-4 relative">
@@ -126,7 +133,7 @@ const Banner = () => {
         </div>
       </div>
 
-      <div className="relative w-full">
+      <div className="relative w-full slide-up-init">
         <div className="absolute top-0 w-1/2 pointer-events-none right-0 lg:hidden h-full bg-[linear-gradient(to_right,transparent_80%,white_100%)] z-[2]"></div>
         <div className="text-center grid grid-flow-col auto-cols-max overflow-x-auto gap-8 lg: lg:gap-2 md:grid-cols-3 p-10 relative">
           <div>

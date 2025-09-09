@@ -12,6 +12,23 @@ body {
   font-family: var(--font-hanken-grotesk), sans-serif;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.slide-up-init {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
 /* .font-inria {
   font-family: var(--font-inria-serif), serif;
 }

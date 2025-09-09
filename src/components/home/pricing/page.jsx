@@ -1,11 +1,16 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import { pricingDetails } from "@/utils/pricingData";
+import { slideUpByClass } from "@/utils/slideUpAnimation";
 
 const Pricing = () => {
+  useEffect(() => {
+    slideUpByClass("slide-up-init");
+  });
+
   return (
     <div
       className="min-h-screen"
@@ -17,7 +22,7 @@ const Pricing = () => {
         backgroundRepeat: "repeat",
       }}
     >
-      <div className="container mx-auto h-full overflow-clip">
+      <div className="container mx-auto h-full overflow-clip slide-up-init">
         <div className="p-4 lg:p-10 flex flex-col h-full ">
           <h2 className="font-inria tracking-tight relative w-fit text-2xl font-bold mb-12">
             Explore Investment Choices{" "}
@@ -75,7 +80,7 @@ const Pricing = () => {
                   className="h-full flex items-stretch"
                   key={details.id}
                 >
-                  <div className="card  flex flex-col justify-between h-full bg-white">
+                  <div className="card flex flex-col justify-between h-full bg-white">
                     <div className="p-4 min-h-[333px] rounded-xl  border border-b-0 rounded-bl-none rounded-br-none border-brand">
                       <div className="relative h-7">
                         <span className="text-sm absolute -right-6  inline-block py-0.5 px-2 rounded-[0.0313rem] bg-brand text-white">

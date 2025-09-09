@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { cards } from "@/utils/serviceData";
+import { slideUpByClass } from "@/utils/slideUpAnimation";
 
 export default function Services() {
   const containerRef = useRef(null);
@@ -14,6 +15,8 @@ export default function Services() {
     const container = containerRef.current;
     const circle = circleRef.current;
     const arrow = arrowRef.current;
+
+    slideUpByClass("slide-up-init");
 
     const hoverTimeline = gsap.timeline({ paused: true });
 
@@ -35,14 +38,14 @@ export default function Services() {
   return (
     <section className="grid lg:grid-cols-2 gap-16 p-4 lg:p-10 min-h-screen start">
       {/* LEFT SIDE (Scrolling Cards, Centered) */}
-      <div className="cards relative flex lg:flex-col gap-x-6 overflow-auto items-center lg:justify-center">
+      <div className="cards relative flex lg:flex-col gap-x-6 overflow-auto lg:overflow-[initial] items-center lg:justify-center">
         {cards.map((c, i) => (
           <div
             key={c.id}
             className=" w-full mt-24 lg:mt-0 lg:h-screen flex items-center text-center"
           >
             <div className="border min-h-[280px] lg:min-h-[240px] flex flex-col justify-end border-gray-200 rounded-xl p-6 lg:p-12 relative text-start max-w-full w-[460px]">
-              <div className="absolute right-2 -top-18 lg:-right-24 lg:-top-28 size-36 lg:size-56 object-contain ">
+              <div className="absolute right-2 -top-18 lg:-right-18 lg:-top-28 size-36 lg:size-44 object-contain ">
                 <Image
                   src={c.url}
                   alt={c.title}
@@ -59,13 +62,13 @@ export default function Services() {
       </div>
 
       {/* RIGHT SIDE (Sticky, Centered) */}
-      <div ref={containerRef} className="overflow-x-clip">
+      <div ref={containerRef} className="overflow-x-clip slide-up-init">
         <div className="lg:sticky top-0 flex  flex-col lg:items-center text-start justify-center lg:h-screen">
-          <div className="relative w-fit lg:w-[320px] text-center">
+          <div className="relative w-fit md:w-[320px] text-center">
             {/* Decorative Circle */}
             <div
               ref={circleRef}
-              className="size-42 absolute -top-24 -z-[1] -right-26 bg-brand rounded-full"
+              className="size-24 md:size-32 xl:size-42 absolute -top-12 right-0 md:-top-12 md:-right-20 lg:-right-12 lg:-top-20 xl:-top-24 -z-[1] xl:-right-26 bg-brand rounded-full"
             ></div>
 
             {/* Static Title */}
@@ -74,7 +77,7 @@ export default function Services() {
               <span>
                 <Image
                   ref={arrowRef}
-                  className="size-12 absolute -right-11 -top-9 lg:rotate-180"
+                  className="size-12 absolute right-5 md:-right-10 lg:-right-2 xl:-right-11 -top-6 md:-top-1 lg:-top-9 xl:-top-9 lg:rotate-180"
                   src="/images/home/icons/arrow-right.svg"
                   height={20}
                   width={20}
