@@ -94,6 +94,7 @@ const Calculator = () => {
             <div className="p-4 mt-6">
               {activeTab === "forex" && (
                 <div className="grid grid-cols-2">
+                  {/* calculator */}
                   <div className="space-y-6">
                     <div className="space-y-4">
                       <div className="flex   items-center gap-2 justify-between">
@@ -219,6 +220,7 @@ const Calculator = () => {
                       />
                     </div>
                   </div>
+                  {/* results */}
                   <div>
                     <div className="flex gap-4 self-center items-center h-full"></div>
                   </div>
@@ -226,6 +228,7 @@ const Calculator = () => {
               )}
               {activeTab === "crypto" && (
                 <div className="grid grid-cols-2">
+                  {/* calculator */}
                   <div className="space-y-6">
                     <div className="mb-8">
                       <div className="flex  items-center gap-2 justify-between">
@@ -375,6 +378,7 @@ const Calculator = () => {
                       />
                     </div>
                   </div>
+                  {/* results */}
                   <div>
                     <div className="flex gap-4 self-center items-center h-full">
                       <div className="size-36 shrink-0 m-auto bg-brand border rounded-full border-brand "></div>
