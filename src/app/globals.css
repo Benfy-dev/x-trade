@@ -44,3 +44,9 @@ input[type="number"] {
 }
 
 /* check swiper */
+
+@media screen and (max-width: 32rem) {
+  .custom-row {
+    grid-row: 1;
+  }
+}

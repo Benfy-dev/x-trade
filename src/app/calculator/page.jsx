@@ -228,11 +228,11 @@ const Calculator = () => {
                 </div>
               )}
               {activeTab === "crypto" && (
-                <div className="grid grid-cols-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
                   {/* calculator */}
                   <div className="space-y-6">
                     <div className="mb-8">
-                      <div className="flex  items-center gap-2 justify-between">
+                      <div className="flex items-center gap-2 justify-between">
                         <label htmlFor="cryptocurrency">Cryptocurrency</label>
                         <select
                           id="cryptocurrency"
@@ -380,8 +380,8 @@ const Calculator = () => {
                     </div>
                   </div>
                   {/* results */}
-                  <div>
-                    <div className="flex gap-4 self-center items-center h-full">
+                  <div className="custom-row mb-12  lg:mb-0">
+                    <div className="flex flex-col  lg:flex-row gap-4 self-center items-center h-full">
                       <div className="size-36 mx-auto">
                         <PieChart
                           investedSlice={investmentInputs.monthly}
@@ -390,7 +390,7 @@ const Calculator = () => {
                       </div>
                       <div>
                         <div className="flex items-center gap-6">
-                          <div className="flex items-center w-[240px] justify-between ">
+                          <div className="flex items-center w-[200px] md:w-[240px] justify-between ">
                             <span>Total Investment Amount</span>
                             <span>:</span>
                           </div>
@@ -401,7 +401,7 @@ const Calculator = () => {
                           </div>
                         </div>
                         <div className="flex items-center gap-6">
-                          <div className="flex items-center w-[240px] justify-between ">
+                          <div className="flex items-center w-[200px] md:w-[240px] justify-between ">
                             <span>Est. Returns (Profit /Loss)</span>
                             <span>:</span>
                           </div>
@@ -410,11 +410,11 @@ const Calculator = () => {
                           </div>
                         </div>
                         <div className="flex items-center gap-6">
-                          <div className="flex items-center w-[240px] justify-between ">
+                          <div className="flex items-center w-[200px] md:w-[240px] justify-between ">
                             <span>Total Returns</span>
                             <span>:</span>
                           </div>
-                          <div className="min-w-[90px]">
+                          <div className="min-w-[90px] text-brand">
                             <b>₹ {finalValue}</b>
                           </div>
                         </div>
