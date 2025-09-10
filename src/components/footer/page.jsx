@@ -25,7 +25,7 @@ const Footer = () => {
         s
       </div>
       <div className="container mx-auto">
-        <div className="p-4 lg:p-10">
+        <div className="p-4 lg:px-10 lg:py-20">
           <div className="flex flex-col md:flex-row gap-10 lg:gap-6">
             <div className="lg:shrink-0 md:w-[40%]">
               <Image

@@ -38,27 +38,31 @@ export default function Services() {
   return (
     <section className="grid lg:grid-cols-2 gap-16 p-4 lg:p-10 min-h-screen start">
       {/* LEFT SIDE (Scrolling Cards, Centered) */}
-      <div className="cards relative flex lg:flex-col gap-x-6 overflow-auto lg:overflow-[initial] items-center lg:justify-center">
-        {cards.map((c, i) => (
-          <div
-            key={c.id}
-            className=" w-full mt-24 lg:mt-0 lg:h-screen flex items-center text-center"
-          >
-            <div className="border min-h-[280px] lg:min-h-[240px] flex flex-col justify-end border-gray-200 rounded-xl p-6 lg:p-12 relative text-start max-w-full w-[460px]">
-              <div className="absolute right-2 -top-18 lg:-right-18 lg:-top-28 size-36 lg:size-44 object-contain ">
-                <Image
-                  src={c.url}
-                  alt={c.title}
-                  width={340}
-                  height={100}
-                  className="w-full h-full object-contain"
-                />
+      <div className="container mx-auto">
+        <div className="cards relative flex lg:flex-col gap-x-6 overflow-auto lg:overflow-[initial] items-center lg:justify-center">
+          {cards.map((c, i) => (
+            <div
+              key={c.id}
+              className=" w-full mt-24 lg:mt-0 lg:h-screen flex items-center text-center"
+            >
+              <div className="border min-h-[280px] lg:min-h-[240px] flex flex-col justify-end border-gray-200 rounded-xl p-6 lg:p-12 relative text-start max-w-full w-[460px]">
+                <div className="absolute right-2 -top-18 lg:-right-18 lg:-top-28 size-36 lg:size-44 object-contain ">
+                  <Image
+                    src={c.url}
+                    alt={c.title}
+                    width={340}
+                    height={100}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h3 className="text-3xl font-inria font-bold mb-4">
+                  {c.title}
+                </h3>
+                <p className="">{c.text}</p>
               </div>
-              <h3 className="text-3xl font-inria font-bold mb-4">{c.title}</h3>
-              <p className="">{c.text}</p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* RIGHT SIDE (Sticky, Centered) */}
@@ -72,7 +76,7 @@ export default function Services() {
             ></div>
 
             {/* Static Title */}
-            <h2 className="text-4xl font-bold relative font-inria mb-4 text-start">
+            <h2 className="text-3xl font-bold relative font-inria mb-4 text-start">
               Services We Offer
               <span>
                 <Image
