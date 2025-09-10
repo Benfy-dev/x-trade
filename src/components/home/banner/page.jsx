@@ -1,9 +1,12 @@
 "use client";
 import { slideUpByClass } from "@/utils/slideUpAnimation";
+import { redirect } from "next/dist/server/api-utils";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 const Banner = () => {
+  const router = useRouter();
   useEffect(() => {
     slideUpByClass("slide-up-init");
   }, []);
@@ -80,6 +83,10 @@ const Banner = () => {
                 </h2>
                 <div>
                   <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      router.push("/thank-you");
+                    }}
                     action=""
                     className="p-4 md:p-8 bg-white md:w-[420px] rounded-xl max-w-full"
                     style={{ boxShadow: " 0px 9px 15.8px 0px #00000012" }}
@@ -91,6 +98,9 @@ const Banner = () => {
                       autoComplete="off"
                       name="name"
                       id="name"
+                      required
+                      pattern="[A-Za-z\s]{1,50}"
+                      maxLength={50}
                     />
                     <input
                       className="p-2 my-6 rounded-md w-full border border-gray-200/50 placeholder:text-gray-400/50"
@@ -99,6 +109,9 @@ const Banner = () => {
                       autoComplete="on"
                       name="phone"
                       id="phone"
+                      required
+                      pattern="[0-9]{10}"
+                      maxLength={10}
                     />
                     <input
                       className="p-2 rounded-md w-full border border-gray-200/50 placeholder:text-gray-400/50"
@@ -107,6 +120,8 @@ const Banner = () => {
                       autoComplete="off"
                       name="mail"
                       id="mail"
+                      required
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                     />
                     <small className="text-gray-400">
                       Your personal information is secure with us.
@@ -118,7 +133,10 @@ const Banner = () => {
                       <span className="font-bold">Our Profit Calculator.</span>
                     </p>
 
-                    <button className="py-2 px-4 mt-4 bg-brand text-white rounded md:text-xl">
+                    <button
+                      type="submit"
+                      className="cursor-pointer py-2 px-4 mt-4 bg-brand text-white rounded md:text-xl"
+                    >
                       View Profit Calculator
                     </button>
                   </form>
