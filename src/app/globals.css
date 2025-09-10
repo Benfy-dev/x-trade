@@ -6,6 +6,7 @@
   --font-hanken: var(--font-hanken-grotesk), sans-serif;
   --font-inria: var(--font-inria-serif), serif;
   --font-kiwi: var(--font-kiwi-maru), serif;
+  --font-caveat: var(--font-caveat), cursive;
 }
 
 body {
