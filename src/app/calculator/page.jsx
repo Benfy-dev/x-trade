@@ -1,4 +1,5 @@
 "use client";
+import PieChart from "@/components/pieChart";
 import { showError } from "@/utils/showToast";
 import React, { useEffect, useState } from "react";
 
@@ -67,11 +68,11 @@ const Calculator = () => {
         <div className="">
           <div className="">
             {/* Tab Buttons */}
-            <div className="flex ">
+            <div className="flex gap-3">
               <button
-                className={`py-2 cursor-pointer px-4 focus:outline-none ${
+                className={`py-2 cursor-pointer rounded-4xl px-4 outline-offset-4 focus:outline-brand ${
                   activeTab === "forex"
-                    ? "text-white bg-brand rounded-4xl"
+                    ? "text-white bg-brand"
                     : "hover:text-brand"
                 }`}
                 onClick={() => setActiveTab("forex")}
@@ -79,9 +80,9 @@ const Calculator = () => {
                 Forex
               </button>
               <button
-                className={`py-2 cursor-pointer px-4 focus:outline-none ${
+                className={`py-2 cursor-pointer rounded-4xl px-4 outline-offset-4 focus:outline-brand ${
                   activeTab === "crypto"
-                    ? "text-white bg-brand rounded-4xl"
+                    ? "text-white bg-brand"
                     : "hover:text-brand"
                 }`}
                 onClick={() => setActiveTab("crypto")}
@@ -99,7 +100,7 @@ const Calculator = () => {
                     <div className="space-y-4">
                       <div className="flex   items-center gap-2 justify-between">
                         <label htmlFor="monthly">Monthly Investment</label>
-                        <div className="flex w-[120px] items-center  rounded bg-brand/40 border border-brand focus:outline-brand outline-offset-5">
+                        <div className="flex w-[120px] items-center  rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
                           <span className="p-2 pr-0">₹</span>
 
                           <input
@@ -146,7 +147,7 @@ const Calculator = () => {
                             {error}
                           </span>
                         </label>
-                        <div className="flex relative w-[120px] items-center rounded bg-brand/40 border border-brand focus:outline-brand outline-offset-5">
+                        <div className="flex relative w-[120px] items-center rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
                           <input
                             type="number"
                             id="roi"
@@ -187,7 +188,7 @@ const Calculator = () => {
                             {error}
                           </span>
                         </label>
-                        <div className="flex relative w-[120px] items-center rounded bg-brand/40 border border-brand focus:outline-brand outline-offset-5">
+                        <div className="flex relative w-[120px] items-center rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
                           <input
                             type="number"
                             id="duration"
@@ -243,7 +244,7 @@ const Calculator = () => {
                               cryptocurrency: e.target.value,
                             })
                           }
-                          className="p-2 rounded bg-brand/40 border border-brand focus:outline-brand outline-offset-5"
+                          className="p-2 rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4"
                         >
                           <option value="BTC">Bitcoin (BTC)</option>
                           <option value="ETH">Ethereum (ETH)</option>
@@ -257,7 +258,7 @@ const Calculator = () => {
                     <div className="space-y-4">
                       <div className="flex   items-center gap-2 justify-between">
                         <label htmlFor="monthly">Monthly Investment</label>
-                        <div className="flex w-[120px] items-center  rounded bg-brand/40 border border-brand focus:outline-brand outline-offset-5">
+                        <div className="flex w-[120px] items-center  rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
                           <span className="p-2 pr-0">₹</span>
 
                           <input
@@ -304,7 +305,7 @@ const Calculator = () => {
                             {error}
                           </span>
                         </label>
-                        <div className="flex relative w-[120px] items-center rounded bg-brand/40 border border-brand focus:outline-brand outline-offset-5">
+                        <div className="flex relative w-[120px] items-center rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
                           <input
                             type="number"
                             id="roi"
@@ -345,7 +346,7 @@ const Calculator = () => {
                             {error}
                           </span>
                         </label>
-                        <div className="flex relative w-[120px] items-center rounded bg-brand/40 border border-brand focus:outline-brand outline-offset-5">
+                        <div className="flex relative w-[120px] items-center rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
                           <input
                             type="number"
                             id="duration"
@@ -381,7 +382,12 @@ const Calculator = () => {
                   {/* results */}
                   <div>
                     <div className="flex gap-4 self-center items-center h-full">
-                      <div className="size-36 shrink-0 m-auto bg-brand border rounded-full border-brand "></div>
+                      <div className="size-36 mx-auto">
+                        <PieChart
+                          investedSlice={investmentInputs.monthly}
+                          returnSlice={finalValue}
+                        />
+                      </div>
                       <div>
                         <div className="flex items-center gap-6">
                           <div className="flex items-center w-[240px] justify-between ">
@@ -390,7 +396,7 @@ const Calculator = () => {
                           </div>
                           <div className="min-w-[90px]">
                             <b>
-                              ₹{Number(investmentInputs.monthly).toFixed(2)}
+                              ₹ {Number(investmentInputs.monthly).toFixed(2)}
                             </b>
                           </div>
                         </div>
