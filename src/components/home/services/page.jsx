@@ -36,7 +36,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section className="grid lg:grid-cols-2 gap-16 p-4 lg:p-10 min-h-screen start">
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 p-4 lg:p-10 min-h-screen start">
       {/* LEFT SIDE (Scrolling Cards, Centered) */}
       <div className="container mx-auto">
         <div className="cards relative flex lg:flex-col gap-x-6 overflow-auto lg:overflow-[initial] items-center lg:justify-center">

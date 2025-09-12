@@ -92,15 +92,15 @@ const Calculator = () => {
             </div>
 
             {/* Tab Content */}
-            <div className="p-4 mt-6">
+            <div className="md:p-4 mt-6">
               {activeTab === "forex" && (
-                <div className="grid grid-cols-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2 overflow-clip">
                   {/* calculator */}
                   <div className="space-y-6">
                     <div className="space-y-4">
                       <div className="flex   items-center gap-2 justify-between">
                         <label htmlFor="monthly">Monthly Investment</label>
-                        <div className="flex w-[120px] items-center  rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
+                        <div className="flex mx-1 w-28 lg:w-[120px] items-center  rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
                           <span className="p-2 pr-0">₹</span>
 
                           <input
@@ -147,7 +147,7 @@ const Calculator = () => {
                             {error}
                           </span>
                         </label>
-                        <div className="flex relative w-[120px] items-center rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
+                        <div className="flex mx-1 relative w-28 lg:w-[120px] items-center rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
                           <input
                             type="number"
                             id="roi"
@@ -156,9 +156,11 @@ const Calculator = () => {
                               handleChangeInput(e);
                             }}
                             value={investmentInputs.roi}
-                            className="h-full p-2 pe-0 outline-0 w-[45px]"
+                            className="h-full p-2 outline-0"
                           />
-                          <span className="block ">%</span>
+                          <span className="block absolute right-2">
+                            <small>in</small> %
+                          </span>
                         </div>
                       </div>
                       <input
@@ -188,7 +190,7 @@ const Calculator = () => {
                             {error}
                           </span>
                         </label>
-                        <div className="flex relative w-[120px] items-center rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
+                        <div className="flex relative mx-1 w-28 lg:w-[120px] items-center rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
                           <input
                             type="number"
                             id="duration"
@@ -197,9 +199,11 @@ const Calculator = () => {
                               handleChangeInput(e);
                             }}
                             value={investmentInputs.duration}
-                            className="h-full p-2 pe-0 outline-0 w-[45px]"
+                            className="h-full p-2 pe-0 outline-0"
                           />
-                          <span className="block">Years</span>
+                          <span className="block absolute right-2">
+                            <small>in</small> Years
+                          </span>
                         </div>
                       </div>
                       <input
@@ -222,13 +226,13 @@ const Calculator = () => {
                     </div>
                   </div>
                   {/* results */}
-                  <div>
+                  <div className="custom-row mb-12 lg:mb-0">
                     <div className="flex gap-4 self-center items-center h-full"></div>
                   </div>
                 </div>
               )}
               {activeTab === "crypto" && (
-                <div className="grid grid-cols-1 lg:grid-cols-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2 overflow-clip">
                   {/* calculator */}
                   <div className="space-y-6">
                     <div className="mb-8">
@@ -244,7 +248,7 @@ const Calculator = () => {
                               cryptocurrency: e.target.value,
                             })
                           }
-                          className="p-2 rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4"
+                          className="p-2 mx-1 w-[90%] sm:w-[initial] rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4"
                         >
                           <option value="BTC">Bitcoin (BTC)</option>
                           <option value="ETH">Ethereum (ETH)</option>
@@ -257,8 +261,10 @@ const Calculator = () => {
                     </div>
                     <div className="space-y-4">
                       <div className="flex   items-center gap-2 justify-between">
-                        <label htmlFor="monthly">Monthly Investment</label>
-                        <div className="flex w-[120px] items-center  rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
+                        <label className="" htmlFor=" monthly">
+                          Monthly Investment
+                        </label>
+                        <div className="flex mx-1 w-28 lg:w-[120px] items-center  rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
                           <span className="p-2 pr-0">₹</span>
 
                           <input
@@ -305,7 +311,7 @@ const Calculator = () => {
                             {error}
                           </span>
                         </label>
-                        <div className="flex relative w-[120px] items-center rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
+                        <div className="flex mx-1 relative w-28 lg:w-[120px] items-center rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
                           <input
                             type="number"
                             id="roi"
@@ -314,9 +320,11 @@ const Calculator = () => {
                               handleChangeInput(e);
                             }}
                             value={investmentInputs.roi}
-                            className="h-full p-2 pe-0 outline-0 w-[45px]"
+                            className="h-full p-2 pe-0 outline-0"
                           />
-                          <span className="block ">%</span>
+                          <span className="block absolute right-2">
+                            <small>in</small> %
+                          </span>
                         </div>
                       </div>
                       <input
@@ -346,7 +354,7 @@ const Calculator = () => {
                             {error}
                           </span>
                         </label>
-                        <div className="flex relative w-[120px] items-center rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
+                        <div className="flex mx-1 relative w-28 lg:w-[120px] items-center rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4">
                           <input
                             type="number"
                             id="duration"
@@ -355,9 +363,11 @@ const Calculator = () => {
                               handleChangeInput(e);
                             }}
                             value={investmentInputs.duration}
-                            className="h-full p-2 pe-0 outline-0 w-[45px]"
+                            className="h-full p-2 pe-0 outline-0 "
                           />
-                          <span className="block">Years</span>
+                          <span className="block absolute right-2">
+                            <small>in</small> Years
+                          </span>
                         </div>
                       </div>
                       <input
@@ -381,7 +391,7 @@ const Calculator = () => {
                   </div>
                   {/* results */}
                   <div className="custom-row mb-12  lg:mb-0">
-                    <div className="flex flex-col  lg:flex-row gap-4 self-center items-center h-full">
+                    <div className="flex flex-col lg:flex-row gap-4 self-center items-center h-full">
                       <div className="size-36 mx-auto">
                         <PieChart
                           investedSlice={investmentInputs.monthly}
@@ -389,32 +399,32 @@ const Calculator = () => {
                         />
                       </div>
                       <div>
-                        <div className="flex items-center gap-6">
-                          <div className="flex items-center w-[200px] md:w-[240px] justify-between ">
+                        <div className="flex items-center justify-start md:justify-start gap-2 lg:gap-6">
+                          <div className="flex items-center text-left md:w-[240px] w-[182px] justify-between ">
                             <span>Total Investment Amount</span>
                             <span>:</span>
                           </div>
-                          <div className="min-w-[90px]">
+                          <div className=" min-w-[98px] shrink-0">
                             <b>
                               ₹ {Number(investmentInputs.monthly).toFixed(2)}
                             </b>
                           </div>
                         </div>
-                        <div className="flex items-center gap-6">
-                          <div className="flex items-center w-[200px] md:w-[240px] justify-between ">
+                        <div className="flex items-center justify-start md:justify-start gap-2 lg:gap-6">
+                          <div className="flex items-center text-left md:w-[240px] w-[182px] justify-between ">
                             <span>Est. Returns (Profit /Loss)</span>
                             <span>:</span>
                           </div>
-                          <div className="min-w-[90px]">
+                          <div className="min-w-[98px] shrink-0">
                             <b>₹ {profit}</b>
                           </div>
                         </div>
-                        <div className="flex items-center gap-6">
-                          <div className="flex items-center w-[200px] md:w-[240px] justify-between ">
+                        <div className="flex items-center justify-start md:justify-start gap-2 lg:gap-6">
+                          <div className="flex items-center text-left md:w-[240px] w-[182px] justify-between ">
                             <span>Total Returns</span>
                             <span>:</span>
                           </div>
-                          <div className="min-w-[90px] text-brand">
+                          <div className="min-w-[98px] text-brand">
                             <b>₹ {finalValue}</b>
                           </div>
                         </div>

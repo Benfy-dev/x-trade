@@ -57,8 +57,8 @@ const Banner = () => {
                   <hr />
                   <p>Achieve success with smart, reliable strategies.</p>
                 </div>
-                <div className="mt-14 font-kiwi font-medium text-4xl">
-                  <p className="bg-brand w-fit -rotate-6 text-white p-4 rounded-[8px]">
+                <div className="mt-8 md:mt-14 text-2xl font-kiwi w-fit ms-auto sm:ms-0 font-medium md:text-4xl">
+                  <p className="bg-brand w-fit -rotate-6 text-white p-2 md:p-4 rounded-[8px]">
                     10 Years of
                   </p>
                   <p className="relative ms-4 -rotate-3 w-fit rounded-[8px]">
@@ -92,7 +92,7 @@ const Banner = () => {
                     style={{ boxShadow: " 0px 9px 15.8px 0px #00000012" }}
                   >
                     <input
-                      className="p-2 rounded-md w-full border border-gray-200/50 placeholder:text-gray-400/50"
+                      className="p-2 rounded-md w-full border border-gray-200 placeholder:text-gray-400/90"
                       type="text"
                       placeholder="Your Name*"
                       autoComplete="off"
@@ -103,18 +103,17 @@ const Banner = () => {
                       maxLength={50}
                     />
                     <input
-                      className="p-2 my-6 rounded-md w-full border border-gray-200/50 placeholder:text-gray-400/50"
+                      className="p-2 my-6 rounded-md w-full border border-gray-200 placeholder:text-gray-400/90"
                       type="tel"
                       placeholder="Mobile Number*"
                       autoComplete="on"
                       name="phone"
                       id="phone"
                       required
-                      pattern="[0-9]{10}"
                       maxLength={10}
                     />
                     <input
-                      className="p-2 rounded-md w-full border border-gray-200/50 placeholder:text-gray-400/50"
+                      className="p-2 rounded-md w-full border border-gray-200 placeholder:text-gray-400/90"
                       type="email"
                       placeholder="E-mail ID*"
                       autoComplete="off"
@@ -128,8 +127,7 @@ const Banner = () => {
                     </small>
 
                     <p className="text-xl md:text-2xl mt-6">
-                      Turn Numbers into Growth with{" "}
-                      <br className="hidden md:inline-block" />
+                      Turn Numbers into Growth with <br className="" />
                       <span className="font-bold">Our Profit Calculator.</span>
                     </p>
 

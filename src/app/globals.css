@@ -9,6 +9,11 @@
   --font-caveat: var(--font-caveat), cursive;
 }
 
+* {
+  outline-offset: 4px;
+  outline-color: #00d094;
+}
+
 body {
   font-family: var(--font-hanken-grotesk), sans-serif;
 }
@@ -45,7 +50,7 @@ input[type="number"] {
 
 /* check swiper */
 
-@media screen and (max-width: 32rem) {
+@media screen and (max-width: 768px) {
   .custom-row {
     grid-row: 1;
   }

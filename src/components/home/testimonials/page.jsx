@@ -57,12 +57,12 @@ const Testimonials = () => {
             freeMode={true}
             modules={[FreeMode]}
             breakpoints={{
-              320: { slidesPerView: 1.2, spaceBetween: 15 },
-              640: { slidesPerView: 1.8, spaceBetween: 20 },
-              768: { slidesPerView: 2.5, spaceBetween: 25 },
+              320: { slidesPerView: 1.1, spaceBetween: 20 },
+              640: { slidesPerView: 1.8, spaceBetween: 30 },
+              768: { slidesPerView: 2.5, spaceBetween: 30 },
               1024: { slidesPerView: 3.5, spaceBetween: 30 },
             }}
-            className="mySwiper h-full !pr-4"
+            className="mySwiper h-full"
           >
             {[1, 2].map((index) => (
               <SwiperSlide key={index} className="h-full slide-up-init">
@@ -79,7 +79,7 @@ const Testimonials = () => {
                       className="rounded-lg cursor-pointer object-cover transition-all object-center h-full w-full"
                     >
                       <source
-                        src={`/videos/home/testimonials/testimonial-0${index}.mp4`}
+                        src={`/videos/home/testimonials/testimonial-01.mp4`}
                         type="video/mp4"
                       />
                     </video>
