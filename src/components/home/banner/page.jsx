@@ -57,7 +57,7 @@ const Banner = () => {
                   <hr />
                   <p>Achieve success with smart, reliable strategies.</p>
                 </div>
-                <div className="mt-8 md:mt-14 text-2xl font-kiwi w-fit ms-auto sm:ms-0 font-medium md:text-4xl">
+                <div className="mt-8 md:mt-14 text-2xl font-kiwi w-fit ml-auto md:ml-0 font-medium md:text-4xl">
                   <p className="bg-brand w-fit -rotate-6 text-white p-2 md:p-4 rounded-[8px]">
                     10 Years of
                   </p>
