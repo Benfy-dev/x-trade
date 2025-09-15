@@ -231,16 +231,8 @@ const Forex = () => {
       </div> */}
 
       <div className="custom-row mb-12  lg:mb-0">
-        <div className="flex flex-col lg:flex-row gap-4 self-center items-center h-full">
-          <div className="size-36 mx-auto">
-            {result && (
-              <PieChart
-                investedSlice={form.investment}
-                returnSlice={result.totalProfit}
-              />
-            )}
-          </div>
-          <div>
+        <div className="flex flex-col lg:flex-row gap-4 self-center justify-center items-center h-full">
+          <div className="p-6 border border-brand rounded">
             {result && (
               <>
                 <div className="flex items-center justify-start md:justify-start gap-2 lg:gap-6">
