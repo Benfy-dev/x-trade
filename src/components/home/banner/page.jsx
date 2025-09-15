@@ -85,7 +85,7 @@ const Banner = () => {
                   <form
                     onSubmit={(e) => {
                       e.preventDefault();
-                      router.push("/thank-you");
+                      router.push("/calculator");
                     }}
                     action=""
                     className="p-4 md:p-8 bg-white md:w-[420px] rounded-xl max-w-full"
