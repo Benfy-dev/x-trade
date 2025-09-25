@@ -1,3 +1,4 @@
+import DropDown from "@/components/dropDown";
 import PieChart from "@/components/pieChart";
 import { showError } from "@/utils/showToast";
 import React, { useEffect, useState } from "react";
@@ -48,31 +49,35 @@ const Crypto = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 overflow-clip">
+    <div className="grid grid-cols-1 lg:grid-cols-5 xl:gap-6 overflow-clip">
       {/* calculator */}
-      <div className="space-y-6">
+      <div className="space-y-6 col-span-2">
         <div className="mb-8">
           <div className="flex items-center gap-2 justify-between">
             <label htmlFor="cryptocurrency">Cryptocurrency</label>
-            <select
-              id="cryptocurrency"
-              name="cryptocurrency"
-              value={investmentInputs.cryptocurrency}
-              onChange={(e) =>
-                setInvestmentInputs({
-                  ...investmentInputs,
-                  cryptocurrency: e.target.value,
-                })
-              }
-              className="p-2 mx-1 w-[90%] sm:w-[initial] rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4"
-            >
-              <option value="BTC">Bitcoin (BTC)</option>
-              <option value="ETH">Ethereum (ETH)</option>
-              <option value="BNB">Binance Coin (BNB)</option>
-              <option value="ADA">Cardano (ADA)</option>
-              <option value="SOL">Solana (SOL)</option>
-              <option value="XRP">Ripple (XRP)</option>
-            </select>
+            <span className="relative">
+              <DropDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2" />
+
+              <select
+                id="cryptocurrency"
+                name="cryptocurrency"
+                value={investmentInputs.cryptocurrency}
+                onChange={(e) =>
+                  setInvestmentInputs({
+                    ...investmentInputs,
+                    cryptocurrency: e.target.value,
+                  })
+                }
+                className=" appearance-none p-2 mx-1 w-[90%] sm:w-[initial] rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4"
+              >
+                <option value="BTC">Bitcoin (BTC)</option>
+                <option value="ETH">Ethereum (ETH)</option>
+                <option value="BNB">Binance Coin (BNB)</option>
+                <option value="ADA">Cardano (ADA)</option>
+                <option value="SOL">Solana (SOL)</option>
+                <option value="XRP">Ripple (XRP)</option>
+              </select>
+            </span>
           </div>
         </div>
         <div className="space-y-4">
@@ -99,7 +104,7 @@ const Crypto = () => {
             </div>
           </div>
           <input
-            className="w-full h-2 rounded-lg appearance-none accent-brand cursor-pointer"
+            className="w-full h-1.5 rounded-lg appearance-none accent-brand cursor-pointer"
             style={{
               background: `linear-gradient(90deg, #00D094 ${
                 investmentInputs.monthly / 1000
@@ -138,13 +143,11 @@ const Crypto = () => {
                 value={investmentInputs.roi}
                 className="h-full p-2 pe-0 outline-0"
               />
-              <span className="block absolute right-2">
-                <small>in</small> %
-              </span>
+              <span className="block absolute right-2">%</span>
             </div>
           </div>
           <input
-            className="w-full h-2 rounded-lg appearance-none accent-brand cursor-pointer"
+            className="w-full h-1.5 rounded-lg appearance-none accent-brand cursor-pointer"
             style={{
               background: `linear-gradient(90deg, #00D094 ${
                 (investmentInputs.roi / 30) * 100 - 1
@@ -179,13 +182,11 @@ const Crypto = () => {
                 value={investmentInputs.duration}
                 className="h-full p-2 pe-0 outline-0 "
               />
-              <span className="block absolute right-2">
-                <small>in</small> Years
-              </span>
+              <span className="block absolute right-2">Years</span>
             </div>
           </div>
           <input
-            className="w-full h-2 rounded-lg appearance-none accent-brand cursor-pointer"
+            className="w-full h-1.5 rounded-lg appearance-none accent-brand cursor-pointer"
             style={{
               background: `linear-gradient(90deg, #00D094 ${
                 (investmentInputs.duration / 30) * 100 - 1
@@ -202,7 +203,7 @@ const Crypto = () => {
         </div>
       </div>
       {/* results */}
-      <div className="custom-row mb-12  lg:mb-0">
+      <div className="custom-row mb-12 lg:col-span-3 lg:mb-0">
         <div className="flex flex-col lg:flex-row gap-4 self-center items-center h-full">
           <div className="size-36 mx-auto">
             <PieChart

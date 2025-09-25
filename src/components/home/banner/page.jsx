@@ -1,14 +1,14 @@
-"use client";
-import { slideUpByClass } from "@/utils/slideUpAnimation";
-import { redirect } from "next/dist/server/api-utils";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+'use client';
+import { slideUpByClass } from '@/utils/slideUpAnimation';
+import { redirect } from 'next/dist/server/api-utils';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 const Banner = () => {
   const router = useRouter();
   useEffect(() => {
-    slideUpByClass("slide-up-init");
+    slideUpByClass('slide-up-init');
   }, []);
 
   return (
@@ -17,9 +17,9 @@ const Banner = () => {
         className="min-h-screen"
         style={{
           backgroundImage: 'url("/images/home/homeBG.svg")',
-          backgroundSize: "cover",
-          backgroundPosition: "bottom center",
-          backgroundRepeat: "repeat",
+          backgroundSize: 'cover',
+          backgroundPosition: 'bottom center',
+          backgroundRepeat: 'repeat',
         }}
       >
         <div className="container mx-auto min-h-full">
@@ -29,7 +29,7 @@ const Banner = () => {
                 <div className="font-inria xl:w-[544px] max-w-full mb-4 relative">
                   <Image
                     className="absolute hidden lg:block -right-44 top-8 -z-[1] pointer-events-none"
-                    src={"/images/home/icons/bitcoin.svg"}
+                    src={'/images/home/icons/bitcoin.svg'}
                     alt="coin"
                     aria-hidden="false"
                     height={100}
@@ -42,8 +42,8 @@ const Banner = () => {
                     <span className="relative">
                       Bitcoin
                       <span className="size-4 bg-brand absolute bottom-3 -z-[1] rounded-full -right-1"></span>
-                    </span>{" "}
-                    &{" "}
+                    </span>{' '}
+                    &{' '}
                     <span className="relative">
                       Crypto
                       <span className="size-4 bg-brand absolute bottom-4 -z-[1] rounded-full -right-0"></span>
@@ -65,7 +65,7 @@ const Banner = () => {
                     Trade Markets
                     <Image
                       className="absolute -top-6 -right-4"
-                      src={"/images/home/icons/star-xtrade.svg"}
+                      src={'/images/home/icons/star-xtrade.svg'}
                       alt="start"
                       aria-hidden="true"
                       width={30}
@@ -85,11 +85,11 @@ const Banner = () => {
                   <form
                     onSubmit={(e) => {
                       e.preventDefault();
-                      router.push("/calculator");
+                      router.push('/calculator');
                     }}
                     action=""
                     className="p-4 md:p-8 bg-white md:w-[420px] rounded-xl max-w-full"
-                    style={{ boxShadow: " 0px 9px 15.8px 0px #00000012" }}
+                    style={{ boxShadow: ' 0px 9px 15.8px 0px #00000012' }}
                   >
                     <input
                       className="p-2 rounded-md w-full border border-gray-200 placeholder:text-gray-400/90"
@@ -151,23 +151,23 @@ const Banner = () => {
 
       <div className="relative w-full slide-up-init">
         <div className="absolute top-0 w-1/2 pointer-events-none right-0 lg:hidden h-full bg-[linear-gradient(to_right,transparent_80%,white_100%)] z-[2]"></div>
-        <div className="text-center grid grid-flow-col auto-cols-max overflow-x-auto gap-8 lg: lg:gap-2 md:grid-cols-3 p-10 relative">
+        <div className="text-center grid grid-flow-col auto-cols-max overflow-x-auto gap-8 lg: lg:gap-2 md:grid-cols-3 p-10 pt-0 relative">
           <div>
             <span className="text-brand bg-brand/30 py-0.5 px-1 rounded-xs">
               1200 K+
-            </span>{" "}
+            </span>{' '}
             Customers served
           </div>
           <div>
             <span className="text-brand bg-brand/30 py-0.5 px-1 rounded-xs">
               250+
-            </span>{" "}
+            </span>{' '}
             Team Members
           </div>
           <div>
             <span className="text-brand bg-brand/30 py-0.5 px-1 rounded-xs">
               10 Years
-            </span>{" "}
+            </span>{' '}
             of Successful Market Presence
           </div>
         </div>

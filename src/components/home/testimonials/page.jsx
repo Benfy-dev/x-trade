@@ -40,14 +40,14 @@ const Testimonials = () => {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
       document.removeEventListener(
         "webkitfullscreenchange",
-        handleFullscreenChange
+        handleFullscreenChange,
       );
     };
   }, []);
 
   return (
     <div className="container mx-auto">
-      <div className="p-4 lg:p-10">
+      <div className="p-4 lg:p-10 lg:pt-0">
         <h2 className="font-inria slide-up-init tracking-tight relative w-fit text-2xl font-bold mb-12">
           Our Customer Testimonials
         </h2>
@@ -67,7 +67,7 @@ const Testimonials = () => {
             {[1, 2].map((index) => (
               <SwiperSlide key={index} className="h-full slide-up-init">
                 <div className="">
-                  <div className="size-[320px] rounded-lg overflow-hidden hover:scale-[1.05] transition-all duration-500 ease-in-out">
+                  <div className="size-[320px] rounded-lg overflow-hidden scale-[.95] hover:scale-[1] transition-all duration-150 ease-in-out">
                     <video
                       ref={videoRef}
                       onMouseEnter={handleMouseEnter}

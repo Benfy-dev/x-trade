@@ -1,4 +1,5 @@
 "use client";
+import DropDown from "@/components/dropDown";
 import PieChart from "@/components/pieChart";
 import { showError } from "@/utils/showToast";
 import React, { useEffect, useState } from "react";
@@ -49,7 +50,7 @@ const Forex = () => {
       baseUnits = investment;
     } else {
       setError(
-        "Account currency must be either the base or quote of the pair."
+        "Account currency must be either the base or quote of the pair.",
       );
       return;
     }
@@ -77,7 +78,7 @@ const Forex = () => {
       summary: `${sign}: ${r(Math.abs(pnlInAccount))} ${account}`,
       sign: sign,
       details: `Base=${base}, Quote=${quote} | Base units ≈ ${r(
-        baseUnits
+        baseUnits,
       )} ${base} | P/L in quote ≈ ${r(pnlInQuote)} ${quote}`,
     });
   };
@@ -100,47 +101,53 @@ const Forex = () => {
             <label className="mb-3 block" htmlFor="accountCurrency">
               Account currency
             </label>
-            <select
-              id="accountCurrency"
-              name="accountCurrency"
-              value={form.accountCurrency}
-              onChange={handleChange}
-              className="p-2 w-full lg:w-44 rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4"
-            >
-              <option value="USD">USD</option>
-              <option value="EUR">EUR</option>
-              <option value="GBP">GBP</option>
-              <option value="JPY">JPY</option>
-              <option value="AUD">AUD</option>
-            </select>
+            <span className="relative">
+              <DropDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2" />
+              <select
+                id="accountCurrency"
+                name="accountCurrency"
+                value={form.accountCurrency}
+                onChange={handleChange}
+                className="appearance-none p-2 w-full lg:w-44 rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4"
+              >
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </span>
           </div>
           <div className="mx-1">
             <label className="mb-3 block" htmlFor="pair">
               Currency pair
             </label>
-            <select
-              id="pair"
-              name="pair"
-              value={form.pair}
-              onChange={handleChange}
-              className="p-2 w-full lg:w-44 rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4"
-            >
-              <option value="EUR/USD">EUR/USD</option>
-              <option value="USD/JPY">USD/JPY</option>
-              <option value="GBP/USD">GBP/USD</option>
-              <option value="USD/CHF">USD/CHF</option>
-              <option value="AUD/USD">AUD/USD</option>
-              <option value="USD/CAD">USD/CAD</option>
-              <option value="NZD/USD">NZD/USD</option>
-              <option value="EUR/GBP">EUR/GBP</option>
-              <option value="EUR/JPY">EUR/JPY</option>
-              <option value="GBP/JPY">GBP/JPY</option>
-              <option value="AUD/JPY">AUD/JPY</option>
-              <option value="CHF/JPY">CHF/JPY</option>
-              <option value="EUR/CHF">EUR/CHF</option>
-              <option value="EUR/AUD">EUR/AUD</option>
-              <option value="GBP/CHF">GBP/CHF</option>
-            </select>
+            <span className="relative">
+              <DropDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2" />
+              <select
+                id="pair"
+                name="pair"
+                value={form.pair}
+                onChange={handleChange}
+                className="appearance-none p-2 w-full lg:w-44 rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4"
+              >
+                <option value="EUR/USD">EUR/USD</option>
+                <option value="USD/JPY">USD/JPY</option>
+                <option value="GBP/USD">GBP/USD</option>
+                <option value="USD/CHF">USD/CHF</option>
+                <option value="AUD/USD">AUD/USD</option>
+                <option value="USD/CAD">USD/CAD</option>
+                <option value="NZD/USD">NZD/USD</option>
+                <option value="EUR/GBP">EUR/GBP</option>
+                <option value="EUR/JPY">EUR/JPY</option>
+                <option value="GBP/JPY">GBP/JPY</option>
+                <option value="AUD/JPY">AUD/JPY</option>
+                <option value="CHF/JPY">CHF/JPY</option>
+                <option value="EUR/CHF">EUR/CHF</option>
+                <option value="EUR/AUD">EUR/AUD</option>
+                <option value="GBP/CHF">GBP/CHF</option>
+              </select>
+            </span>
           </div>
         </div>
         <div className="grid gap-2 grid-cols-1 md:grid-cols-2">
@@ -167,16 +174,19 @@ const Forex = () => {
             <label className="mb-3 block" htmlFor="side">
               Position
             </label>
-            <select
-              id="side"
-              name="side"
-              value={form.side}
-              onChange={handleChange}
-              className=" p-2 w-full lg:w-44 rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4"
-            >
-              <option value="buy">Buy (long)</option>
-              <option value="sell">Sell (short)</option>
-            </select>
+            <span className="w-fit relative">
+              <DropDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2" />
+              <select
+                id="side"
+                name="side"
+                value={form.side}
+                onChange={handleChange}
+                className="appearance-none p-2 w-full lg:w-44 rounded bg-brand/20 border border-brand focus:outline-brand outline-offset-4"
+              >
+                <option value="buy">Buy (long)</option>
+                <option value="sell">Sell (short)</option>
+              </select>
+            </span>
           </div>
         </div>
         <div className="grid gap-2 grid-cols-1 md:grid-cols-2">
@@ -195,7 +205,7 @@ const Forex = () => {
               ></input>
             </div>
           </div>
-          <div>
+          <div className="mx-1">
             <label className="mb-2 inline-block" htmlFor="exit">
               Exit Price
             </label>

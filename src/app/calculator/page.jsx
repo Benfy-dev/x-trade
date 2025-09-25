@@ -16,13 +16,15 @@ const Calculator = () => {
         backgroundSize: "cover",
         backgroundPosition: "bottom center",
         backgroundRepeat: "repeat",
+        backgroundColor: "rgba(255,255,255,.5)",
+        backgroundBlendMode: "color",
       }}
     >
       <div className="container mx-auto  p-4 lg:p-10">
         <div className="">
           <div className="">
             {/* Tab Buttons */}
-            <div className="flex gap-3">
+            <div className="flex mx-10 gap-3">
               <button
                 className={`py-2 cursor-pointer rounded-4xl px-4 outline-offset-4 focus:outline-brand ${
                   activeTab === "forex"
@@ -46,7 +48,7 @@ const Calculator = () => {
             </div>
 
             {/* Tab Content */}
-            <div className="md:p-4 mt-6">
+            <div className="md:p-4 md:px-10 mt-6">
               {activeTab === "forex" && <Forex />}
               {activeTab === "crypto" && <Crypto />}
             </div>

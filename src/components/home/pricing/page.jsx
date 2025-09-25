@@ -22,8 +22,8 @@ const Pricing = () => {
         backgroundRepeat: "repeat",
       }}
     >
-      <div className="container mx-auto h-full overflow-clip slide-up-init">
-        <div className="p-4 lg:p-10 flex flex-col h-full ">
+      <div className="container ms-auto h-full overflow-clip slide-up-init">
+        <div className="p-4 lg:p-10 lg:pr-2 flex flex-col h-full ">
           <h2 className="font-inria tracking-tight relative w-fit text-2xl font-bold mb-12">
             Explore Investment Choices{" "}
             <span>
