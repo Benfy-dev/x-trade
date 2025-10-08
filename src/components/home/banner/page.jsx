@@ -37,7 +37,7 @@ const Banner = () => {
                     width={100}
                   />
                   <p className="text-3xl text-brand font-bold">
-                    India’s Trusted
+                    Learn
                   </p>
                   <h1 className="text-5xl xl:text-7xl font-bold">
                     <span className="relative">
@@ -58,7 +58,7 @@ const Banner = () => {
                   <hr />
                   <p>Achieve success with smart, reliable strategies.</p>
                 </div>
-                <div className="mt-8 md:mt-14 text-2xl font-kiwi w-fit ml-auto md:ml-0 font-medium md:text-4xl">
+                {/* <div className="mt-8 md:mt-14 text-2xl font-kiwi w-fit ml-auto md:ml-0 font-medium md:text-4xl">
                   <p className="bg-brand w-fit -rotate-6 text-white p-2 md:p-4 rounded-[8px]">
                     10 Years of
                   </p>
@@ -73,13 +73,13 @@ const Banner = () => {
                       height={30}
                     />
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="flex items-center justify-center lg:justify-normal">
               <div className="flex flex-col-reverse lg:flex-col gap-4 lg:gap-8">
                 <h2 className="text-2xl text-center">
-                  Invest in Bitcoin & crypto <br />
+                  Learn Bitcoin & crypto <br />
                   <span className="font-bold">smartly, maximize returns.</span>
                 </h2>
                 <div>

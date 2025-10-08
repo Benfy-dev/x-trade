@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="py-4 px-4 xl:px-0">
           <Link href="/">
             <Image
-              src="/images/xtrade-logo.png"
+              src="/images/xtrade_logo.png"
               alt="X Trade"
               width={174}
               height={62}
